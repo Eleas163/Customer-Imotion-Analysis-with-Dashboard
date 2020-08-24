@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Analytics | Emotion Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- nav top start -->
+  <section>
+    <nav class="navbar navbar-expand navbar-fixed-top navTop">
+      <a class="navbar-brand bebasNeue-bold" href="index.html">Emotion Analysis</a>
+      <button class="navbar-toggler" onclick="toggleHide()">
+          <i class="fas fa-bars"></i>
+      </button>
+      <a class="brndHide bebasNeue-bold" href="index.html">Emotion Analysis</a>
+      <div class="topnav-breadcrumb">
+        <span class="bebasNeue-book">Dashboard</span>
+        <i class="fas fa-chevron-right"></i>
+        <span class="bebasNeue-book">Smart Camera</span>
+      </div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item navSearch">
+          <span class="bebasNeue-book">Smart Devices Framework</span>
+        </li>
+        <li class="nav-item navIcon dropdown">
+          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-alt"></i>
+          </a>
+          <div class="dropdown-menu profileDrop" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="#">Logout</a>    
+          </div>      
+        </li>
+      </ul>
+    </nav>
+  </section>
+  <!-- nav top end -->
+  <!-- side menu start -->
+  <aside class="sideMenu" id="sideMnu">
+    <div class="sideBottom">
+      <ul>
+        <li class="menu-txt">
+          <a href="#">
+            <span class="bebasNeue-book pl-4">MENU</span>
+          </a>
+        </li>
+        <li>
+          <a href="./index.html">
+              <i class="fas fa-palette"></i>
+            <span class="bebasNeue-bold">DASHBOARD</span>
+          </a>
+        </li>
+        <li>
+          <a class="aActive" href="./analytics.html">
+              <i class="fas fa-table"></i>
+            <span class="bebasNeue-bold">ANALYTICS</span>
+          </a>
+        </li>
+        <li class="uiElmnt" onclick="uiShowHide()" id="drpwndLi">
+          <a id="brdrToggle">
+              <i class="fas fa-laptop"></i>
+            <span class="bebasNeue-bold" style="padding-right: 3.5rem;">SOME OTHER</span>
+            <i class="fas fa-angle-right arrwRght" id="arrRght"></i>
+          </a>
+          <ul class="sideDropdwn" id="uiDrpdwn">
+            <li>
+             <a href="">
+               <i class="far fa-dot-circle"></i>
+               <span class="bebasNeue-bold">OPTION ONE</span>
+             </a>
+            </li>
+            <li>
+             <a href="">
+               <i class="far fa-dot-circle"></i>
+               <span class="bebasNeue-bold">OPTION TWO</span>
+             </a>
+            </li>
+            <li>
+             <a href="">
+               <i class="far fa-dot-circle"></i>
+               <span class="bebasNeue-bold">OPTION THREE</span>
+             </a>
+            </li>
+            <li>
+             <a href="">
+               <i class="far fa-dot-circle"></i>
+               <span class="bebasNeue-bold">OPTION FOUR</span>
+             </a>  
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="">
+              <i class="fas fa-chart-pie"></i>
+            <span class="bebasNeue-bold">ANOTHER OPTION</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+              <i class="fas fa-pen-square"></i>
+            <span class="bebasNeue-bold">SETTINGS</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+              <i class="fas fa-file-alt"></i>
+            <span class="bebasNeue-bold">PROFILE</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  <!-- side menu end -->
+  <!-- app content -->
+  <main class="appContent" id="appcontnt">
+    <!-- options start -->
+    <div class="options-top row">
+      <ul class="list-unstyled">
+        <li class="mx-2">
+          <select class="form-control bebasNeue-bold" name="" id="">
+            <option value="">SMART CAMERA</option>
+            <option value="">ANOTHER</option>
+            <option value="">ANOTHER</option>
+          </select>
+        </li>
+        <li class="mx-2">
+          <select class="form-control bebasNeue-bold" name="" id="">
+            <option value="">ALL DEVICES</option>
+            <option value="">ANOTHER</option>
+            <option value="">ANOTER</option>
+          </select>
+        </li>
+        <li class="mx-2">
+          <select class="form-control bebasNeue-bold" name="" id="">
+            <option value="">ANALYTICS</option>
+            <option value="">OTHER</option>
+            <option value="">OTHER</option>
+          </select>
+        </li>
+        <li class="hour">
+          <select class="form-control bebasNeue-bold" name="" id="">
+            <option value="">LAST HOUR</option>
+            <option value="">LAST DAY</option>
+            <option value="">LAST WEEK</option>
+          </select>
+        </li>
+        <li class="mx-2">
+          <p class="mb-0 bebasNeue-bold text">MANAGE DEVICE GROUPS</p>
+        </li>
+      </ul>
+    </div>
+    <!-- options end -->
+    <!-- video part start -->
+    <div class="row analytics-page">
+      <div class="col-md-8 user-history">
+        <div class="inner">
+          <div class="option">
+            <select class="form-control bebasNeue-bold" name="" id="">
+              <option value="">USER HISYORY</option>
+              <option value="">ANOTHER</option>
+              <option value="">ANOTHER</option>
+            </select>
+          </div>
+
+          <div class="user-db">
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+  
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+  
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+  
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+            <div class="single">
+              <img src="assets/images/face1.jpg" alt="">
+              <p class="sex bebasNeue-bold">SEX: FEMALE</p>
+              <p class="age bebasNeue-bold">AGE: 22-24</p>
+              <p class="emotion bebasNeue-bold">CONFUSED <i class='far fa-meh-blank'></i> </p>
+            </div>
+          </div>
+          <!-- emotion statistics & detection accuracy start -->
+          <div class="row emo-statistics">
+            <div class="col-md-5 pr-md-2 mb-4">
+              <div class="chart-inner chart1">
+                <div class="option">
+                  <select class="form-control bebasNeue-bold" name="" >
+                    <option value="">EMOTION STATISTICS:</option>
+                  </select>
+                </div>
+                <canvas id="emotion-chart"></canvas>
+                <p class="tag bebasNeue-regular">EMOTIONS</p>
+              </div>
+            </div>
+            <div class="col-md-7 pl-md-2 mb-4">
+              <div class="accuracy-chart">
+                <div class="option">
+                  <select class="form-control bebasNeue-bold" name="" >
+                    <option value="">Detection Accuracy:</option>
+                  </select>
+                </div>
+                <canvas id="line-chart" width="800" height="320"></canvas>
+                <p class="tag bebasNeue-regular">TIME</p>
+              </div>
+            </div>
+          </div>
+          <!-- emotion statistics & detection accuracy end -->
+        </div>
+      </div>
+      <!-- right part start -->
+      <div class="col-md-4">
+        <!-- visitor & gender data start -->
+        <div class="row visitor-gender-data">
+          <div class="col pr-0">
+            <div class="visitor-overview">
+              <div class="option">
+                <select class="form-control bebasNeue-bold" name="" id="">
+                  <option value="">VISITOR OVERVIEW:</option>
+                </select>
+              </div>
+              <p class="tag bebasNeue-regular">NUMBER OF VISITORS</p>
+              <h1 class="count bebasNeue-bold">100</h1>
+            </div>
+          </div>
+          <div class="col pl-0">
+            <div class="bar-chart3">
+              <div class="option">
+                <select class="form-control bebasNeue-bold" name="" id="">
+                  <option value="">GENDER DATA:</option>
+                </select>
+              </div>
+              <canvas id="gender-chart" height="320"></canvas>
+              <p class="tag bebasNeue-regular mb-0">GENDER BRACKETS</p>
+            </div>
+          </div>
+        </div>
+        <!-- visitor & gender data end -->
+        <!-- age data start -->
+        <div class="bar-chart2">
+          <div class="option">
+            <select class="form-control bebasNeue-bold" name="" id="">
+              <option value="">AGE DATA:</option>
+            </select>
+          </div>
+          <canvas id="age-chart"></canvas>
+          <p class="tag bebasNeue-regular">AGE BRACKETS</p>
+        </div>
+        <!-- age data end -->
+      </div>
+      <!-- right part end -->
+    </div>
+    <!-- video part end -->
+  </main>
+
+  <!-- chart js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <!-- jquery js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- custom js -->
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>

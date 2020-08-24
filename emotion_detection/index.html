@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Customer Emotion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- google fonts css -->
+    <link href="https://fonts.googleapis.com/css?family=Niconne&display=swap" rel="stylesheet">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+     <script>
+    // let d;
+    // var ws = new WebSocket("ws://127.0.0.1:8080/");
+    // // messages = document.createElement('ul');
+    // message1 = document.getElementById('happy');
+    // // message2 = document.getElementById('conf');
+    //
+    // ws.onmessage = function (event) {
+    //     d = event.data.split("-");
+    //     data = {emo:d[0],conf:d[1]};
+    //     // str= JSON.stringify(data);
+    //     // js_data = JSON.parse(str);
+    //     Chart.labels = d[0];
+    //     Chart.data = parseInt(d[1]);
+    //     window.BarChartData.update()
+    //     console.log(Chart.labels,Chart.data);
+    //
+    // };
+
+</script>
+</head>
+<body>
+<!-- nav top start -->
+<section>
+    <nav class="navbar navbar-expand navbar-fixed-top navTop">
+        <a class="navbar-brand" href="{% url 'home' %}">Customer Emotion</a>
+        <button class="navbar-toggler" onclick="toggleHide()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a class="brndHide" href="index.html">Computer Vision</a>
+        <div class="topnav-breadcrumb">
+            <span>Dashboard</span>
+            <i class="fas fa-chevron-right"></i>
+            <span>Smart Camera</span>
+        </div>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item navSearch">
+                <span>Smart Devices Framework</span>
+            </li>
+
+            <li class="nav-item navIcon dropdown">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-alt"></i>
+                </a>
+                <div class="dropdown-menu profileDrop" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</section>
+<!-- nav top end -->
+<!-- side menu start -->
+<aside class="sideMenu" id="sideMnu">
+    <div class="sideBottom">
+        <ul>
+            <li>
+                <a class="aActive" href="" style="border-color: #5DC16B">
+                    <i class="fas fa-palette"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="uiElmnt" onclick="uiShowHide()" id="drpwndLi">
+                <a id="brdrToggle">
+                    <i class="fas fa-laptop"></i>
+                    <span style="padding-right: 4.5rem;">Some Other</span>
+                    <i class="fas fa-angle-right arrwRght" id="arrRght"></i>
+                </a>
+                <ul class="sideDropdwn" id="uiDrpdwn">
+                    <li>
+                        <a href="">
+                            <i class="far fa-dot-circle"></i>
+                            <span>Option One</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-dot-circle"></i>
+                            <span>Option Two</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-dot-circle"></i>
+                            <span>Option Three</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-dot-circle"></i>
+                            <span>Option Four</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Another Option</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas fa-pen-square"></i>
+                    <span>More Option</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas fa-table"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>
+<!-- side menu end -->
+<!-- app content -->
+<main class="appContent" id="appcontnt">
+    <!-- options start -->
+    <div class="options-top row">
+        <ul class="list-unstyled">
+            <li>
+                <select class="form-control" name="" id="">
+                    <option value="">Smart Camera</option>
+                    <option value="">Another</option>
+                    <option value="">Another</option>
+                </select>
+            </li>
+            <li>
+                <select class="form-control" name="" id="">
+                    <option value="">All devices</option>
+                    <option value="">Another</option>
+                    <option value="">Another</option>
+                </select>
+            </li>
+            <li class="ml-4 mr-4">
+                <p class="mb-0">
+                    LAST REFRESHED | <span>05:11:43 PM 01.01.2020</span>
+                    <a href="#" class="ml-2 reload-icon"><i class="fas fa-sync"></i></a>
+                </p>
+            </li>
+            <li>
+                <select class="form-control" name="" id="">
+                    <option value="">Last Hour</option>
+                    <option value="">Last Day</option>
+                    <option value="">Last Week</option>
+                </select>
+            </li>
+            <li class="ml-2">
+                <p class="mb-0">Manage device groups</p>
+            </li>
+        </ul>
+    </div>
+    <!-- options end -->
+    <!-- statistics start -->
+    <div class="row statistics">
+        <div class="col-lg-2 bg-white">
+            <div class="visitor">
+                <span>Visitors</span>
+                <div class="mt-1">
+                    <div class="col left">
+                        <div class="p-2">
+                            <span>Male: </span>
+                            <span class="h4">90</span>
+                        </div>
+                    </div>
+                    <div class="col right">
+                        <div class="p-2">
+                            <span>Female: </span>
+                            <span class="h4">30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="chart-inner chart1">
+                <canvas id="emotion-chart"></canvas>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="chart-inner chart2">
+                <canvas id="count-chart"></canvas>
+            </div>
+        </div>
+    </div>
+    <!-- statistics end -->
+    <!-- video part start -->
+    <!-- video part end -->
+</main>
+
+<!-- chart js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<!-- jquery js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- bootstrap js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- custom js -->
+
+
+
+<script>
+    // js for sidebar dropdown
+
+
+    function uiShowHide() {
+        var b = document.getElementById("uiDrpdwn");
+        if (b.style.display === "block") {
+            document.getElementById("arrRght").style = "transform: rotate(0deg)";
+            document.getElementById("brdrToggle").style = "border-color: #113937; background: #113937";
+            document.getElementById("brdrToggle").onmouseover = function () {
+                this.style.backgroundColor = "#205a58";
+                this.style.borderColor = "#5DC16B";
+            }
+            document.getElementById("brdrToggle").onmouseout = function () {
+                this.style.backgroundColor = "#113937";
+                this.style.borderColor = "#113937";
+            }
+        } else {
+            document.getElementById("arrRght").style = "transform: rotate(90deg)";
+            document.getElementById("brdrToggle").style = "border-color: #5DC16B; background: #205a58";
+        }
+    }
+
+    $(document).ready(function () {
+        $("#drpwndLi").click(function () {
+            $("#uiDrpdwn").slideToggle("slow");
+        });
+    });
+
+    //  toggle sidebar
+    function toggleHide() {
+        var a = document.getElementById("sideMnu");
+        if (a.style.width === "230px") {
+            document.getElementById("sideMnu").style = "width: 0px;";
+            document.getElementById("appcontnt").style = "margin-left: 0px;";
+        } else {
+            document.getElementById("sideMnu").style = "width: 230px;";
+            document.getElementById("appcontnt").style = "margin-left: 0px;";
+        }
+    }
+    //
+
+    let d;
+    var ws = new WebSocket("ws://127.0.0.1:8080/");
+    // messages = document.createElement('ul');
+    message1 = document.getElementById('happy');
+    // message2 = document.getElementById('conf');
+
+    ws.onmessage = function (event) {
+        d = event.data.split("-");
+        emo=d[0];
+        conf=d[1];
+        new Chart(document.getElementById("emotion-chart"), {
+
+        type: 'bar',
+        data: {
+            // "Angry", "Sad", "Happy", "Fear"
+            labels: [emo],
+            datasets: [
+                {
+                    label: "Count",
+                    backgroundColor: ["#3F4C78", "#11A667", "#37BFEF", "#e8c3b9"],
+                    // 5, 47, 30, 23
+                    data: [parseInt(conf)],
+                }
+            ]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: ''
+            },
+
+        }
+
+    });
+
+    };
+
+
+
+
+    new Chart(document.getElementById("count-chart"), {
+        type: 'bar',
+        data: {
+            labels: ["0-5", "6-10", "10-15", "16-20"],
+            datasets: [
+                {
+                    label: "Count",
+                    backgroundColor: ["#3F4C78", "#11A667", "#37BFEF", "#e8c3b9"],
+                    data: [5, 47, 30, 23]
+                }
+            ]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: ''
+            }
+        }
+    });
+
+    // camera js
+    var video = document.getElementById('video');
+
+    // Get access to the camera!
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        // Not adding `{ audio: true }` since we only want video now
+        navigator.mediaDevices.getUserMedia({video: true}).then(function (stream) {
+            //video.src = window.URL.createObjectURL(stream);
+            video.srcObject = stream;
+            video.play();
+        });
+    }
+</script>
+
+</body>
+</html>

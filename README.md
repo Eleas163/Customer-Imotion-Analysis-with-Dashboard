@@ -29,3 +29,10 @@ Solution
 AI & ML Enabled Customer Sentiment Analysis Project therefore, helps with availability for 24/7. 
 
 And collect product basis customers data and understand that What customers want and what they don't want properly from our project. 
+
+
+Run Instructions:
+
+First run: run_websocket.py
+
+Second run: analytics.html
